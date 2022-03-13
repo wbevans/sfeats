@@ -32,3 +32,4 @@ As this is a coding exercise that is intended to be a 3 hour exercise, there wer
 - I wanted to move some of the code from the FacilitiesController to a separate service 
 - I wanted to strengthen error handling and messaging
 - I wanted to move some more of the strings to the appsettings.json file
+- I wanted to do bounds checking for lat/lon and addresses to make sure they were valid for the San Francisco area
