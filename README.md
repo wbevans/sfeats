@@ -22,6 +22,7 @@ The solution presented here solves the food truck dilemma by presenting a [web A
 - Unit tests to validate data from service providers
 - Route data provided by [BingMapsRESTToolkit](https://github.com/microsoft/BingMapsRESTToolkit). Originally, I implemented the solution using their DistanceMatrixRequest, however, once I added unit tests and compared the values to what was returned by typing directly into Bing Maps, I found the values differed significantly. I then switched to using RouteRequests instead. This led to performance issues as I had to make a single call for every address. However, I was ultimately able to break apart the request by batching the requests as different waypoints on the same route, and calling them all asynchronously.
 - In order to not reveal my BingMaps API key, I chose to use Azure KeyVault.
+- Using Newtonsoft for json libraries for easier decoding of double values in json formatted with quotation marks.
 
 ## Limitations
 As this is a coding exercise that is intended to be a 3 hour exercise, there were several features that I ran out of time to properly implement. This is a list of some of those items:
