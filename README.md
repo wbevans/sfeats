@@ -19,6 +19,6 @@ The solution presented here solves the food truck dilema by presenting a [web AP
 
 ## Design considerations
 - Solution uses dependency injection to support services. In the case of data provider, it allows use of different providers as requested by the user.
-- Unit tests to validate data from BingDistanceProviderService
+- Unit tests to validate data from service providers
 - Route data provided by [BingMapsRESTToolkit](https://github.com/microsoft/BingMapsRESTToolkit). Originally I implemented the solution using their DistanceMatrixRequest, however, once I added unit tests and compared the values to what was returned by typing directly into Bing Maps, I found the values differed significantly. I then switched to using RouteRequests instead. This led to performace issues as I had to make a single call for every address. However, I was ultimately able to break apart the request by batching the requests as different waypoints on the same route, and calling them all asynchronously.
 - In order to not reveal my BingMaps API key, I chose to use Azure KeyVault.
