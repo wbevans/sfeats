@@ -22,3 +22,13 @@ The solution presented here solves the food truck dilema by presenting a [web AP
 - Unit tests to validate data from service providers
 - Route data provided by [BingMapsRESTToolkit](https://github.com/microsoft/BingMapsRESTToolkit). Originally I implemented the solution using their DistanceMatrixRequest, however, once I added unit tests and compared the values to what was returned by typing directly into Bing Maps, I found the values differed significantly. I then switched to using RouteRequests instead. This led to performace issues as I had to make a single call for every address. However, I was ultimately able to break apart the request by batching the requests as different waypoints on the same route, and calling them all asynchronously.
 - In order to not reveal my BingMaps API key, I chose to use Azure KeyVault.
+
+## Limitations
+As this is a coding excercise that is intended to be a 3 hour exercise, there were several features that I ran out of time to properly implment. This is a list of some of those items:
+- I wanted to deploy this project using a pipeline, however, the Swashbuckle build was having issues with the .NET 6 Minimal API so I was unable to resolve this in time so it uses a manual publish from Visual Studio.
+- I wanted to get the DistanceMatrixRequest working to reduce the number of calls to Bing
+- I wanted to move the Azure KeyVault code into a separate service.
+- I wanted to move some of the code from the FacilitiesController to a separate service 
+- I wanted to strengthen error handling and messaging
+- I wanted to move some more of the strings to the configuration file
+- 
